@@ -7,10 +7,13 @@ console.log("we call it");
 
 module.exports = {
     watch: true,
-    mode: 'production',
+    mode: 'development',
   
+    
 
-    entry: "./client/app/index.js",
+    entry:
+        "./client/app/index.js",
+
         
     output: {
         path: __dirname +"/client/public",
@@ -41,6 +44,7 @@ module.exports = {
 
     plugins:[
         new UglifyJsPlugin(),
+        
     ]
 
 };

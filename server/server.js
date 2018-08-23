@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-
+const bodyParser = require('body-parser');
 //mongoose
 const mongoose = require('mongoose');
 
@@ -21,7 +21,7 @@ const webpackDevMiddlewere = require ('webpack-dev-middleware')(
 mongoose.connect('mongodb://localhost:27017/myDb');
 //middleware
 app.use(webpackDevMiddlewere);
-
+app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../client/public'));
 
 

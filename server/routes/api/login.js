@@ -3,14 +3,14 @@ const Users = require('./../../models/Users');
 
 module.exports = function(app){
 
-    app.post('/newuser',(req,res,next)=>{
-        console.log("1");
-        
-        var newUser = new Users();
-
-        newUser.Username = "Nour ElHouda";
-        newUser.Password = "Ziad";
-         newUser.save((err,user)=>{
+    app.post('/postUser',(req,res,next)=>{
+                
+        const data = req.body;
+                
+        newUser = new Users();
+        newUser.FirstName = data.firstName;
+        newUser.LastName = data.lastName;
+        newUser.save((err,user)=>{
           if (err) {
             return res.send(
               {
@@ -19,17 +19,16 @@ module.exports = function(app){
               });
     
           }
-            console.log("done");
             
+           
             return res.send(
               {
                 success: true,
                 message: 'Signed up'
 
               });
-
+        });
     });
-});
 
 
     app.get('/users', function(req, res){
@@ -42,4 +41,5 @@ module.exports = function(app){
         .catch((err) => next(err));
     });
 }
+
 
