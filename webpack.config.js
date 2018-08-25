@@ -9,10 +9,9 @@ module.exports = {
     watch: true,
     mode: 'development',
   
-    
 
     entry:
-        "./client/app/index.js",
+        "./client/index.js",
 
         
     output: {
@@ -39,6 +38,10 @@ module.exports = {
                     }
                 }
             },
+            {
+                test: /\.scss$/,
+                loader: 'style-loader!css-loader!sass-loader'
+            }
         ]
     },
 
