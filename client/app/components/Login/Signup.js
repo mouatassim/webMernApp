@@ -1,5 +1,7 @@
 import React from "react";
 import axios from 'axios';
+import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router'
 
 class Signup extends React.Component{
     
@@ -8,10 +10,14 @@ class Signup extends React.Component{
         this.state={
           'firstName' :'' ,
           'lastName':'',
-          'redirect':true
+          'redirect':false
         };
       }
+
     
+      
+    
+      
     
     _handleChangeFirstName(event){
 
@@ -23,12 +29,11 @@ class Signup extends React.Component{
         this.setState({ lastName: event.target.value })
 
     }
+    
 
     _hendlSubmit(e){
 
             e.preventDefault();
-
-    
             var user ={
                 firstName: this.state.firstName,
                 lastName: this.state.lastName
@@ -40,7 +45,10 @@ class Signup extends React.Component{
             .then(res => {
               console.log(res);
               console.log(res.data);
+              this.setState({'redirect' : true});
+        
             })
+            
         }
                 
                
@@ -51,12 +59,17 @@ class Signup extends React.Component{
     
     render(){
 
+        if (this.state.redirect) {
+          return <Redirect to='/welcome'/>;
+        }
         return(
     
-          <div>
-            <input type="text" ref="editFirstName" placeholder="First Name" onChange={this._handleChangeFirstName.bind(this)} />
-            <input type="text" ref="editLastName" placeholder="Last Name" onChange={this._handleChangeLastName.bind(this)} />
+          <div className="mainBack">
+            <input type="text" ref="editFirstName" placeholder="First Name" onChange={this._handleChangeFirstName.bind(this)} /><br />
+            <input type="text" ref="editLastName" placeholder="Last Name" onChange={this._handleChangeLastName.bind(this)} /><br />
             <input type="submit" value="Sign up" onClick={this._hendlSubmit.bind(this)}/>
+            
+            
           </div>
     
         )

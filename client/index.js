@@ -11,6 +11,7 @@ import {
 import App from './app/components/App/App';
 import Home from './app/components/Home/Home';
 import Mota from './app/components/Mota/Mota';
+import Welcome from './app/components/Welcome/Welcome';
 import './public/styles/styles.scss';
 
 
@@ -22,6 +23,7 @@ render((
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route  path="/mota" component={Mota} />
+        <Route  path="/welcome" component={Welcome} />
       </Switch>
     </App>
   </Router>

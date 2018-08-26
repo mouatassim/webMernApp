@@ -7,10 +7,9 @@ class Home extends React.Component{
     render(){
 
         return(
-          <div className="mainBack">
-          <h1>Hello world</h1>
+
           <Signup />
-          </div>
+          
         )
       }
     }

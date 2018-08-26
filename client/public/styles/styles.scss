@@ -1,7 +1,62 @@
+body{
+    background-color: whitesmoke; 
+}
+.header{
+    width: 100%;
+    background-color: #c4ffb7
+}
+table{
+    width: 100%;
+}
+.headerUser{
+    text-align: right;
+}
+.headerSearch{
+    text-align: center;
+}
 .mainBack{
-    background-color: darkslateblue;
+    background-color:white; 
+    padding: 2% 2% 2% 2%;
+    width: 40%;
+    margin-top: 5%;
+    margin-bottom: 100px;
+    margin-left: 55%;
+    
+
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        font-size: 24px;
+    }
+
+    input[type=text]:focus {
+
+        background-color: lightblue;
+    }
+    input[type=submit] {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    input[type=submit]:hover {
+        background-color: #059111; 
+        color: white; 
+        border: 1px solid #059111;
+    }
+
     h1{
         text-transform: uppercase;
+        text-align: center;
         color: white;
     }
 }
