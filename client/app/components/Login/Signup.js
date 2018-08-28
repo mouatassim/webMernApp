@@ -10,6 +10,11 @@ class Signup extends React.Component{
         this.state={
           'firstName' :'' ,
           'lastName':'',
+          'email':'',
+          'password':'',
+          'dateOfBirth':'',
+          'Gendre':'',
+
           'redirect':false
         };
       }
@@ -26,17 +31,31 @@ class Signup extends React.Component{
 
     _handleChangeLastName(event){
 
-        this.setState({ lastName: event.target.value })
+      this.setState({ lastName: event.target.value })
 
     }
     
+    _handleChangeEmail(event){
+
+      this.setState({ email: event.target.value })
+   }
+
+   _handleChangePassword(event){
+
+    this.setState({ password: event.target.value })
+  }
+
+  
 
     _hendlSubmit(e){
 
             e.preventDefault();
             var user ={
                 firstName: this.state.firstName,
-                lastName: this.state.lastName
+                lastName: this.state.lastName,
+                email: this.state.email,
+                password: this.state.password
+
             }
 
                     
@@ -65,8 +84,10 @@ class Signup extends React.Component{
         return(
     
           <div className="mainBack">
-            <input type="text" ref="editFirstName" placeholder="First Name" onChange={this._handleChangeFirstName.bind(this)} /><br />
-            <input type="text" ref="editLastName" placeholder="Last Name" onChange={this._handleChangeLastName.bind(this)} /><br />
+            <input className="firstName" type="text" ref="editFirstName" placeholder="First Name" onChange={this._handleChangeFirstName.bind(this)} />
+            <input className="lastName" type="text" ref="editLastName" placeholder="Last Name" onChange={this._handleChangeLastName.bind(this)} /><br />
+            <input type="email" ref="editEmail" placeholder="Email" onChange={this._handleChangeEmail.bind(this)} /><br />
+            <input type="password" ref="editPassword" placeholder="Password" onChange={this._handleChangePassword.bind(this)} /><br />
             <input type="submit" value="Sign up" onClick={this._hendlSubmit.bind(this)}/>
             
             

@@ -2,12 +2,10 @@ body{
     background-color: whitesmoke; 
 }
 .header{
-    width: 100%;
+    width: 105%;
     background-color: #c4ffb7
 }
-table{
-    width: 100%;
-}
+
 .headerUser{
     text-align: right;
 }
@@ -22,16 +20,25 @@ table{
     margin-bottom: 100px;
     margin-left: 55%;
     
+    .firstName{
+        width: 55%;
+        margin-right: 2%;
+    }
+    .lastName{
+        width: 43%;
+    }
 
-    input[type=text] {
+    input {
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;
         box-sizing: border-box;
         font-size: 24px;
+     
     }
 
-    input[type=text]:focus {
+   
+    input :focus {
 
         background-color: lightblue;
     }

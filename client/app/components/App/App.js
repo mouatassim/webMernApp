@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import Header from './../Header/Header';
+import HeaderVisitor from './../Header/HeaderVisitor';
+import HeaderUser from './../Header/HeaderUser'
 
 const App = ({ children }) => (
   
     
   <div>
-    <Header />
+    <HeaderVisitor />
     <main>
       {children}
     </main>

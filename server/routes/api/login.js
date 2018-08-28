@@ -9,7 +9,9 @@ module.exports = function(app){
                 
         newUser = new Users();
         newUser.FirstName = data.firstName;
-        newUser.LastName = data.lastName;
+        newUser.LastName = data.lastName.toUpperCase();
+        newUser.Email = date.email.toLowrCase();
+        newUser.Password = newUser.generateHash(date.password);
         newUser.save((err,user)=>{
           if (err) {
             return res.send(
