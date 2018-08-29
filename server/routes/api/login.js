@@ -6,12 +6,15 @@ module.exports = function(app){
     app.post('/postUser',(req,res,next)=>{
                 
         const data = req.body;
+
+        console.log(data);
+        
                 
         newUser = new Users();
         newUser.FirstName = data.firstName;
         newUser.LastName = data.lastName.toUpperCase();
-        newUser.Email = date.email.toLowrCase();
-        newUser.Password = newUser.generateHash(date.password);
+        newUser.Email = data.email.toLowerCase();;
+        newUser.Password = newUser.generateHash(data.password);
         newUser.save((err,user)=>{
           if (err) {
             return res.send(

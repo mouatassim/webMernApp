@@ -22,6 +22,7 @@ module.exports = {
     devServer:{
         overlay: true,
         port: 3000,
+        watch : true,
        // hot: true,
         color:true
     },

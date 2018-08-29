@@ -1,8 +1,21 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const date = new Date("1994-04-26T17:00:00Z");
 
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+
+if(dd<10) {
+    dd = '0'+dd
+} 
+
+if(mm<10) {
+    mm = '0'+mm
+} 
+
+today = mm + '/' + dd + '/' + yyyy;
 
 
 const UserSchema = new mongoose.Schema({
@@ -24,7 +37,7 @@ const UserSchema = new mongoose.Schema({
     },
     DateOfBirth :{
       type : Date,
-      default: this.date
+      default: today
     },
 
     Gender:{
