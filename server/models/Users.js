@@ -3,19 +3,12 @@ const bcrypt = require('bcrypt');
 
 
 var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0!
-var yyyy = today.getFullYear();
+var d = today.getDate();
+var m = today.getMonth()+1; 
+var y = today.getFullYear();
 
-if(dd<10) {
-    dd = '0'+dd
-} 
 
-if(mm<10) {
-    mm = '0'+mm
-} 
-
-today = mm + '/' + dd + '/' + yyyy;
+today = m + '/' + d + '/' + y;
 
 
 const UserSchema = new mongoose.Schema({
@@ -52,8 +45,8 @@ UserSchema.methods.generateHash=(Password)=>{
   return bcrypt.hashSync(Password,bcrypt.genSaltSync(8),null);
 }  
 
-UserSchema.methods.validPassword = (Password)=>{
-  return bcrypt.compareSync(Password,this.Password);
+UserSchema.methods.validPassword = (password)=>{
+  return bcrypt.compareSync(password,this.Password);
 }
 //Create model
 const Users = mongoose.model('Users',UserSchema);

@@ -1,10 +1,82 @@
 body{
-    background-color: whitesmoke; 
+    background-color: white; 
 }
 .header{
-    width: 105%;
-    background-color: #c4ffb7
+    width: 102%;
+    height: 20%;
+    background-color:black;
+
+    .headerTitel{
+        width:60%;
+        text-align: center;
+        h1{
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: 1%;
+            color: white;
+            font-family:  'Arial Narrow'
+        }
+        img {
+            width: 80px;
+            height: 80px;
+            margin-top: 5%;
+            -webkit-animation:r1 2s linear infinite;
+            animation:r1 4s linear infinite;
+            position: relative;
+            
+        }
+        @keyframes r1 {
+            0%{transform: rotate(360deg)}
+            10%{transform: rotate(0deg)}
+        }
+        img,h1 {
+            display: inline-block;
+          }
+        
+    }
+    
+    .headerSignIN{
+        text-align: left;
+        width:40%;
+        input {
+            width: 35%;
+            padding: 8px 8px;
+            margin: 8px 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+         
+        }    
+       
+        input :focus {
+    
+            background-color: lightblue;
+        }
+
+        input[type=submit] {
+            width: 20%;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 10px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #059111; 
+            color: white; 
+            border: 1px solid #059111;
+        }
+       
+
+    }
+    .headerTitel,.headerSignIN {
+        display: inline-block;
+      }
 }
+
 
 .headerUser{
     text-align: right;

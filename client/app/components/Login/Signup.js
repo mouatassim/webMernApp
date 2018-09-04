@@ -60,7 +60,7 @@ class Signup extends React.Component{
 
                     
 
-            axios.post(`/postUser`,user)
+            axios.post(`/api/account/signup`,user)
             .then(res => {
               console.log(res);
               console.log(res.data);
