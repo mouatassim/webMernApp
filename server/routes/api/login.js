@@ -140,7 +140,7 @@ module.exports = function(app){
         if(users.length != 1){
           return res.send({
             success: false,
-            message:"Error: Invalid!"
+            message:"Error: Account doesn't existe!"
           })
         }
         
@@ -151,9 +151,8 @@ module.exports = function(app){
         console.log(user);
         
 
-        if(!user.validPassword("password")){
-          console.log("tmanyak tmanyak");
-         
+        if(!bcrypt.compareSync(password,user.Password)){
+                 
           return res.send(
             {
               success: false,
@@ -162,7 +161,7 @@ module.exports = function(app){
             });
         }
 
-        console.log("here");
+        
         //Otherwise 
 
         
@@ -182,7 +181,7 @@ module.exports = function(app){
           return res.send(
             {
               success: true,
-              message: 'Signed up',
+              message: 'Signed in',
               token: doc._id
 
             });

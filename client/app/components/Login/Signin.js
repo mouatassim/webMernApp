@@ -63,8 +63,8 @@ constructor (){
         <div className="headerSignIN">
 
           
-            <input type="text" rel="changeEmail" placeholder="Email" onChange={this._handleEmailText.bind(this)} />
-            <input type="text" rel="changePassword" placeholder="Password" onChange={this._handlePasswordText.bind(this)} />
+            <input type="email" rel="changeEmail" placeholder="Email" onChange={this._handleEmailText.bind(this)} />
+            <input type="password" rel="changePassword" placeholder="Password" onChange={this._handlePasswordText.bind(this)} />
             <input type="submit" value="Login" onClick={this._hendlSubmit.bind(this)} />
           
 
