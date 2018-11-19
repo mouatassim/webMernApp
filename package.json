@@ -15,7 +15,7 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "bcrypt": "^3.0.0",
+    "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
     "exports-loader": "^0.7.0",
     "express": "^4.16.3",
@@ -32,8 +32,8 @@
     "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
-    "css-loader": "^1.0.0",
-    "node-sass": "^4.9.3",
+    "css-loader": "^1.0.1",
+    "node-sass": "^4.10.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.22.1",
     "webpack-cli": "^3.1.0"
